@@ -231,8 +231,6 @@ void armSystem(const String & type, const String & pin) {
     } else {
       client.publish("alarmpanel/arm/" + type, pin);
     }
-    currentAlarmState = "requested";
-    screen.drawAlarmSystemState();
   }
   code = "";
 }
