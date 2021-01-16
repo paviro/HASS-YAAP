@@ -1,7 +1,7 @@
 # HASS-YAAP
 ##### Yet another alarm (control) panel for Home Assistant.
-* Welcome people arriving by their name
 * Change alarm system mode (away, home, night, disarmed)
+* Welcome people arriving by their name
 * Turn off all lights (when you leave for example)
 
 ### Usage
@@ -39,6 +39,8 @@ Press any key.
 
 ![Welcome](.files/welcome.png)
 
+
+
 ## Used Hardware
 
 #### Parts
@@ -47,11 +49,48 @@ Press any key.
 
 * [4x20 characters LCD with I2C interface](https://www.az-delivery.de/en/products/hd44780-2004-lcd-display-bundle-4x20-zeichen-mit-i2c-schnittstelle)
 
-* [ESP8266 Board](https://www.az-delivery.de/en/products/nodemcu-lua-amica-v2-modul-mit-esp8266-12e-unverloetet) (You will proably need to change the config in platform.io for your board)
+* [ESP8266 Board](https://www.az-delivery.de/en/products/nodemcu-lua-amica-v2-modul-mit-esp8266-12e-unverloetet) (You will proably need to change the config in PlatformIO for your board)
 
   
 
 ![Electronics](.files/electronics.png)You should probably choose a better pin layout than I did but apparently this is what I used judging from the code 😅
+
+
+
+## ESP8266 Configuration
+
+Download and install the [PlatformIO IDE](https://platformio.org).
+
+Create a file called `config.h` in the folder `include` with the contents of [config_example.h](https://github.com/paviro/HASS-YAAP/blob/main/include/config_example.h).
+
+
+
+Choose a language file (default selected is English):
+
+```c++
+#include "translations/EN.h"
+```
+
+Add your WiFi and MQTT credentials:
+
+```c++
+#define WiFi_SSID              "WiFi_SSID"
+#define WiFi_PW                "WiFi_PW"
+#define MQTT_SERVER_IP         "192.168.x.y"
+#define MQTT_USER              "MQTT_USER"
+#define MQTT_PW                "MQTT_PW"
+#define MQTT_CLIENT_NAME       "AlarmControlPanel"
+```
+
+**Adjust the other settings to your liking.**
+
+
+
+If needed adjust the settings in PlatformIO for your board.
+
+![PlatformIO Project](.files/platformio_project.png)
+
+![PlatformIO Project](.files/platformio_board.png)
 
 
 
@@ -248,4 +287,3 @@ Turn on the LCD backlight if a motion sensor near the panel is triggered.
         topic: "alarmpanel/lcd"
         payload: "on"
 ```
-
