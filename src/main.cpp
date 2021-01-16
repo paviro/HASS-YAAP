@@ -294,9 +294,11 @@ void onLightsCallback(const String & message) {
 
 void onAlarmSystemStateChange(const String & message) {
   currentAlarmState = message;
-  screen.drawAlarmSystemState();
+  if ( !(screen.displayed == "codeInput" and (currentAlarmState == "triggered" or currentAlarmState == "pending")) )
+  {
+    screen.drawAlarmSystemState();
+  }
 }
-
 
 void onConnectionEstablished() {
   client.subscribe("person/arrived", onPersonArrived);
