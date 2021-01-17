@@ -287,3 +287,11 @@ Turn on the LCD backlight if a motion sensor near the panel is triggered.
         topic: "alarmpanel/lcd"
         payload: "on"
 ```
+
+
+
+## Roadmap
+
+* TLS Support (Anyone want to give it a shot?)
+* Support more display types?
+* More translations
