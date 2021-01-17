@@ -10,13 +10,13 @@ String languageJSON = R"(
     "pending": "Alarm in afwachting",
     "triggered": "!!! Alarm !!!",
     "arming": "Activeren...",
-    "requested": "Wachten op een antwoord",
+    "requested": "Wachten op antwoord",
 
     "enterCode": "Voer code in",
     "invalidCodeHeader": "Foutieve code",
     "invalidCodeMessage": "Code geweigerd",
 
-    "connecting": "Connecteren met server",
+    "connecting": "Verbinden met server",
 
     "currentStateHeader": "Huidige status",
     "currentStateMessage": "Systeem is al",
