@@ -5,7 +5,7 @@
 
 // ------------------------------------ 
 // Language
-// Available: EN.h, DE.h
+// Available: EN.h, DE.h, NL.h
 // ------------------------------------ 
 
 // Use one of the available files or create a new one
